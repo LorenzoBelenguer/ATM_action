@@ -1,4 +1,5 @@
 # Welcome message
+# The whole code was created from scratch by myself, and then, corrected and tuned in with the assistance of ChatGP
 print("Welcome to Santander bank")
 
 def input_pin():
