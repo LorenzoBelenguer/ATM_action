@@ -1,0 +1,105 @@
+# Welcome message
+# The whole code was created from scratch by myself, and, then, assisted by ChatGPT to correct mistakes and tuning in
+print("Welcome to Santander bank")
+
+def input_pin():
+    pin_number = input("Please input your four-digit PIN number: ")
+    while pin_number != "2222":
+        print("Sorry, the PIN number is incorrect")
+        pin_number = input("Please input your four-digit PIN number: ")
+    print("Your PIN number is correct. You can continue")
+
+
+# Create a function with all the options for the user
+def ATM_action():
+    bank_balance = 5000000
+    daily_withdrawal_limit = 1000
+    
+    while True:
+        print("What would you like to do today?")
+        print("1 for displaying the bank account balance")
+        print("2 for depositing money")
+        print("3 to withdraw money")
+        print("4 to exit from the ATM")
+        
+        choice = input("Please select one of the four options by inputting the number: ")
+        
+        if choice == "1":
+            print("The bank account balance is £", bank_balance)
+            choice1 = input("Would you like to do something else? 1 for Yes or 2 for No: ")
+            if choice1 == "2":
+                print("Have a lovely day")
+                break
+            elif choice1 == "1":
+                continue
+            else:
+                print("Invalid choice. Please select either 1 or 2.")
+        
+        elif choice == "2":
+            print("You have chosen to deposit money.")
+            amount_deposited = float(input("Please enter the amount to deposit: "))
+            bank_balance += amount_deposited
+            print("Amount deposited: £", amount_deposited)
+            print("Bank account balance after deposit: £", bank_balance)
+            
+            choice1 = input("Would you like to do something else? 1 for Yes or 2 for No: ")
+            if choice1 == "2":
+                print("Have a lovely day")
+                break
+            elif choice1 == "1":
+                continue
+            else:
+                print("Invalid choice. Please select either 1 or 2.")
+        
+        elif choice == "3":
+            print("You have chosen to withdraw money.")
+            print("Select one of the following options:")
+            print("1 for £10")
+            print("2 for £20")
+            print("3 for £50")
+            print("4 to enter a custom amount")
+            
+            withdraw_choice = input("Please select one of the options: ")
+            
+            if withdraw_choice == "1":
+                withdraw_amount = 10
+            elif withdraw_choice == "2":
+                withdraw_amount = 20
+            elif withdraw_choice == "3":
+                withdraw_amount = 50
+            elif withdraw_choice == "4":
+                withdraw_amount = float(input("Please enter the withdrawal amount: "))
+                
+                if withdraw_amount % 10 != 0:
+                    print("Sorry, the withdrawal amount must be a multiple of £10.")
+                    continue
+                
+                if withdraw_amount > bank_balance or withdraw_amount > daily_withdrawal_limit:
+                    print("Sorry, you can't withdraw the amount requested because it is above your balance or above the daily limit of £1000.")
+                    continue
+            else:
+                print("Invalid choice. Please choose a number from 1 to 4.")
+                continue
+            
+            print("Withdrawing £", withdraw_amount)
+            bank_balance -= withdraw_amount  # Update bank balance with the withdrawn amount
+            print("Bank account balance after withdrawal: £", bank_balance)
+            
+            choice1 = input("Would you like to do something else? 1 for Yes or 2 for No: ")
+            if choice1 == "2":
+                print("Have a lovely day")
+                break
+            elif choice1 == "1":
+                continue
+            else:
+                print("Invalid choice. Please select either 1 or 2.")
+        
+        elif choice == "4":
+            print("Thank you for using Santander bank. Have a great day!")
+            break
+        else:
+            print("Invalid choice. Please choose a number from 1 to 4.")
+
+# Call the function to start the program
+input_pin()
+ATM_action()
