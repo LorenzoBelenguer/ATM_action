@@ -1,5 +1,4 @@
 # Welcome message
-# The whole code was created from scratch by myself, and, then, assisted by ChatGPT to correct mistakes and tuning in
 print("Welcome to Santander bank")
 
 def input_pin():
@@ -28,7 +27,7 @@ def ATM_action():
             print("The bank account balance is £", bank_balance)
             choice1 = input("Would you like to do something else? 1 for Yes or 2 for No: ")
             if choice1 == "2":
-                print("Have a lovely day")
+                print("Thank you for using Santander bank. Have a lovely day")
                 break
             elif choice1 == "1":
                 continue
@@ -44,7 +43,7 @@ def ATM_action():
             
             choice1 = input("Would you like to do something else? 1 for Yes or 2 for No: ")
             if choice1 == "2":
-                print("Have a lovely day")
+                print("Thank you for using Santander bank. Have a lovely day")
                 break
             elif choice1 == "1":
                 continue
@@ -87,7 +86,7 @@ def ATM_action():
             
             choice1 = input("Would you like to do something else? 1 for Yes or 2 for No: ")
             if choice1 == "2":
-                print("Have a lovely day")
+                print("Thank you for using Santander bank. Have a lovely day")
                 break
             elif choice1 == "1":
                 continue
